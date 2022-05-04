@@ -1,0 +1,79 @@
+body {
+  background-color: #f4f6f8;
+}
+
+// Config
+@import "./reset.css";
+
+body {
+  color: #303038;
+}
+a {
+  text-decoration: none;
+  color: #303038;
+}
+
+@mixin mainSearchBg($position) {
+  background: {
+    image: url(/images/sp_main_search.png);
+    size: 323px 234px;
+    repeat: no-repeat;
+    position: $position;
+  }
+}
+@mixin weatherBg($position) {
+  background: {
+    image: url(/images/sp_weather_animation.png);
+    size: 472px 447px;
+    repeat: no-repeat;
+    position: $position;
+  }
+}
+@mixin searchBg($position) {
+  background: {
+    image: url(/images/sp_search.png);
+    size: 372px 361px;
+    repeat: no-repeat;
+    position: $position;
+  }
+}
+
+/* header */
+
+.header {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__menu {
+  width: 44px;
+  height: 44px;
+  margin: 8px;
+  @include mainSearchBg(-49px -145px);
+}
+
+.header__buttons {
+  margin: 8px;
+
+  .header__button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__button--notify {
+    @include mainSearchBg(-45px -194px);
+  }
+
+  .header__button--pay {
+    @include mainSearchBg(-90px -194px);
+  }
+
+  .header__button--profile {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    @include mainSearchBg(-261px -76px);
+  }
+}
