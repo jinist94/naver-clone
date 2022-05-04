@@ -154,71 +154,131 @@
               <a class="shortcut__item" href="/">쇼핑 편성표</a>
             </div>
           </div>
-          <div class="card card-covid">
-            <ul>
-              <li class="card-covid__item">
-                <a href="">
-                  <span>확진 현황</span>
-                </a>
-              </li>
-              <li class="card-covid__item">
-                <a href="">
-                  <span>신속항원검사</span>
-                </a>
-              </li>
-              <li class="card-covid__item">
-                <a href="">
-                  <span>잔여백신예약</span>
-                </a>
-              </li>
-              <li class="card-covid__item">
-                <a href="">
-                  <span>팩트체크</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <ul class="card card-covid">
+            <li class="card-covid__item status">
+              <a href="" class="card-covid__link">
+                <span>확진 현황</span>
+              </a>
+            </li>
+            <li class="card-covid__item test">
+              <a href="" class="card-covid__link">
+                <span>신속항원검사</span>
+              </a>
+            </li>
+            <li class="card-covid__item vaccine">
+              <a href="" class="card-covid__link">
+                <span>잔여백신예약</span>
+              </a>
+            </li>
+            <li class="card-covid__item fact">
+              <a href="" class="card-covid__link">
+                <span>팩트체크</span>
+              </a>
+            </li>
+          </ul>
           <div class="card card-app">
-            <a>
-              <p>
+            <a class="card-app__link">
+              <p class="card-app__text">
                 더 편리해진 AI 검색 기능<br />
-                <strong>네이버앱</strong>에서 만나보세요
+                <strong>네이버앱</strong><span class="light">에서 만나보세요</span>
               </p>
-              <span>앱 사용하기</span>
+              <span class="card-app__move">앱 사용하기</span>
             </a>
           </div>
           <div class="card card-promotion">
-            <ul>
+            <ul class="align-left">
               <li class="card-promotion__item">
-                <strong>패션뷰티판</strong>
-                <p>에스티 로더로 전하는 감사의 마음</p>
+                <div class="card-promotion__info">
+                  <strong class="title">에버콜라겐 역대급 브랜드위크</strong>
+                  <p class="text">최대 46% 할인+사은품</p>
+                </div>
+                <div class="card-promotion__thumb">
+                  <img src="/images/card_promotion_image_01.jpg" />
+                </div>
               </li>
               <li class="card-promotion__item">
-                <strong>알이 꽉찬 제철꽃게</strong>
-                <p>맛있는 상품과 레시피 보고가세요</p>
+                <div class="card-promotion__info">
+                  <strong class="title">장보기판</strong>
+                  <p class="text">첫구매 고객님 어서오세요~</p>
+                </div>
+                <div class="card-promotion__thumb">
+                  <img src="/images/card_promotion_image_02.jpg" />
+                </div>
               </li>
               <li class="card-promotion__item">
-                <strong>알짜정보는 경제판</strong>
-                <p>노후 대비하려면 이건 알아 둬야죠, 2022년 개정된 기초연금제도 알아보기</p>
+                <div class="card-promotion__info">
+                  <strong class="title">책방판 '어린이날' 기념</strong>
+                  <p class="text">아이들이 읽기 좋은 책은?</p>
+                </div>
+                <div class="card-promotion__thumb">
+                  <img src="/images/card_promotion_image_03.jpg" />
+                </div>
+              </li>
+            </ul>
+            <ul class="align-right">
+              <li class="card-promotion__item">
+                <div class="card-promotion__info">
+                  <strong class="title">자동차판</strong>
+                  <p class="text">기아 신형 니로 EV 가격부터 공개</p>
+                </div>
+                <div class="card-promotion__thumb">
+                  <img src="/images/card_promotion_image_04.jpg" alt="자동차판" />
+                </div>
               </li>
               <li class="card-promotion__item">
-                <strong>띵동! 웹툰 배달왔어요</strong>
-                <p>오늘의 업데이트 작품 보러가기</p>
+                <div class="card-promotion__info">
+                  <strong class="title">추천·구독판</strong>
+                  <p class="text">내 취향저격 콘텐츠 무한 스크롤!</p>
+                </div>
+                <div class="card-promotion__thumb">
+                  <img src="/images/card_promotion_image_05.png" alt="추천·구독판" />
+                </div>
+              </li>
+              <li class="card-promotion__item">
+                <div class="card-promotion__info">
+                  <strong class="title">오늘 하루 순삭 가능!</strong>
+                  <p class="text">시간 가는 줄 모르고 보는 웹툰</p>
+                </div>
+                <div class="card-promotion__thumb">
+                  <img src="/images/card_promotion_image_06.jpg" alt="웹툰" />
+                </div>
               </li>
             </ul>
           </div>
           <div class="card card-stock">
-            <ul>
-              <li>
-                <strong class="card-stock__title">나스닥 100 선물</strong>
-                <em>13,115,25</em>
-                <div class="gap">
-                  <span class="icon_up">상승</span>
-                  <span class="price">27.75</span>
-                  <span class="rate">+0.22%</span>
-                </div>
-              </li>
-            </ul>
+            <div class="card-stock__wrap">
+              <ul class="card-stock__list">
+                <li class="card-stock__item">
+                  <strong class="title">다우존스</strong>
+                  <span class="price">33,250.17</span>
+                  <div class="gap">
+                    <span class="icon_up">상승</span>
+                    <span class="gap_price">121.38</span>
+                    <span class="gap_rate">+0.37%</span>
+                  </div>
+                </li>
+
+                <li class="card-stock__item">
+                  <strong class="title">다우 선물</strong>
+                  <span class="price">33,261.00</span>
+                  <div class="gap">
+                    <span class="icon_up">상승</span>
+                    <span class="gap_price">228.00</span>
+                    <span class="gap_rate">+0.69%</span>
+                  </div>
+                </li>
+
+                <li class="card-stock__item">
+                  <strong class="title">나스닥 100 선물</strong>
+                  <span class="price">13,115,25</span>
+                  <div class="gap">
+                    <span class="icon_up">상승</span>
+                    <span class="gap_price">27.75</span>
+                    <span class="gap_rate">+0.22%</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="card__shortcut">
               <a href="/" class="shortcut__item">국내 증시</a>
               <a href="/" class="shortcut__item">해외 증시</a>
@@ -226,13 +286,17 @@
             </div>
           </div>
           <div class="card card-banner">
-            <div class="card-banner__image"></div>
-            <div class="card-banner__info">
-              <div class="card-banner__profile">
-                <img src="" alt="" />
+            <div class="card-banner__image">
+              <img src="/images/card_banner_01.jpg" alt="네이버 선물대첩" />
+            </div>
+            <div class="card-banner__content">
+              <div class="card-banner__thumb">
+                <img src="/images/card_banner_profile_01.jpg" alt="" />
               </div>
-              <h3 class="card-banner__title">네이버 선물대첩</h3>
-              <p class="card-banner__sub">가정의 달 선물하면 최대 13% 적립</p>
+              <div class="card-banner__info">
+                <h3 class="card-banner__title">네이버 선물대첩</h3>
+                <p class="card-banner__sub">가정의 달 선물하면 최대 13% 적립</p>
+              </div>
             </div>
           </div>
         </div>
