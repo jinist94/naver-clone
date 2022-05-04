@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/main.scss" />
     <title>NAVER</title>
   </head>
   <body>
-    <header>
-      <div class="header__menu"></div>
-      <div class="header__buttons"></div>
+    <header class="header">
+      <button class="header__menu"></button>
+      <div class="header__buttons">
+        <button class="header__button header__button--pay"></button>
+        <button class="header__button header__button--notify"></button>
+        <button class="header__button header__button--profile"></button>
+      </div>
     </header>
     <div class="search-header">
       <nav class="nav">
@@ -24,26 +29,216 @@
       </nav>
     </div>
     <main>
-      <div class="search">
-        <div class="search__input"></div>
-        <div class="search__shortcut">
-          <div class="shortcut__buttons"></div>
-        </div>
-      </div>
-      <div class="ad-banner"></div>
       <div class="content">
-        <div class="card__list">
-          <div class="card__item card-wearder"></div>
-          <div class="card__item card-now"></div>
-          <div class="card__item card-covid"></div>
-          <div class="card__item card-app"></div>
-          <div class="card__item card-promotion"></div>
-          <div class="card__item card-stock"></div>
-          <div class="card__item card-banner"></div>
+        <div class="search">
+          <div class="search__container">
+            <button class="search__logo"></button>
+            <input placeholder="검색어를 입력해주세요" />
+            <button class="search__button"></button>
+          </div>
+          <div class="search__shortcut">
+            <ul class="shortcut__buttons">
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/news_icon.png" alt="뉴스판" />
+                </div>
+                <span>뉴스판</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/shopping_icon.png" alt="쇼핑판" />
+                </div>
+                <span>쇼핑판</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/economy_icon.png" alt="경제판" />
+                </div>
+                <span>경제판</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/sports_icon.png" alt="스포츠판" />
+                </div>
+                <span>스포츠판</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/mail_icon.png" alt="메일" />
+                </div>
+                <span>메일</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/cafe_icon.png" alt="카페" />
+                </div>
+                <span>카페</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/blog_icon.png" alt="블로그" />
+                </div>
+                <span>블로그</span>
+              </li>
+              <li>
+                <div class="shortcut__image">
+                  <img src="/images/more_icon.png" alt="더보기" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ad-banner">
+          <img src="/images/ad_banner.png" alt="이니스프리 슈퍼빅세일" />
+        </div>
+
+        <div class="l-grid">
+          <div class="card card-weather">
+            <div class="card-weather__info">
+              <div class="card-weather__image"></div>
+              <div class="card-weather__place">
+                <strong class="title">20° 서울</strong>
+                <div class="sub">
+                  미세<span class="state-good"> 좋음</span> · 초미세<span class="state-bad"> 나쁨</span>
+                </div>
+              </div>
+              <button class="card-weather__my-location">내 위치찾기</button>
+            </div>
+            <p class="card-weather__notice">
+              위치 찾기를 눌러 현 위치의 시간대별·주간날씨와<br />
+              미세먼지 예보를 여기에서 바로 보세요
+            </p>
+          </div>
+          <div class="card card-now">
+            <div class="card-now__top">
+              <h3 class="card-now__title"></h3>
+              <a class="card-now__move">
+                <div class="thumb"><img src="/images/now_logo.png" /></div>
+                <span class="text">NOW.의 모든 쇼를 앱으로 만나요!</span>
+              </a>
+            </div>
+            <ul class="card-now__list">
+              <li class="card-now__item">
+                <a href="/" class="item__image">
+                  <span class="icon-live">LIVE</span>
+                  <img src="/images/now_list_image_01.png" alt="말 없이 이어지는 라이브 피아노 연주" />
+                  <div class="item__logo">
+                    <img src="/images/now_list_image_title_01.png" alt="낮밤선율" />
+                  </div>
+                </a>
+                <a class="item__title">말 없이 이어지는 라이브 피아노 연주</a>
+              </li>
+              <li class="card-now__item">
+                <a href="/" class="item__image">
+                  <img src="/images/now_list_image_02.png" alt="PSY 싸다9 '이제는' 무대!" />
+                  <div class="item__logo">
+                    <img src="/images/now_list_image_title_02.png" alt="낮밤선율" />
+                  </div>
+                </a>
+
+                <a class="item__title">PSY 싸다9 '이제는' 무대!</a>
+              </li>
+              <li class="card-now__item">
+                <a href="/" class="item__image">
+                  <span class="icon-live">LIVE</span>
+                  <img src="/images/now_list_image_03.png" alt="밤샘in가요" />
+                  <div class="item__logo">
+                    <img src="/images/now_list_image_title_03.png" alt="낮밤선율" />
+                  </div>
+                </a>
+                <a class="item__title">&lt;밤샘in가요&gt;</a>
+              </li>
+            </ul>
+            <div class="card__shortcut">
+              <a class="shortcut__item" href="/">나우 편성표</a>
+              <a class="shortcut__item" href="/">쇼핑 편성표</a>
+            </div>
+          </div>
+          <div class="card card-covid">
+            <ul>
+              <li class="card-covid__item">
+                <a href="">
+                  <span>확진 현황</span>
+                </a>
+              </li>
+              <li class="card-covid__item">
+                <a href="">
+                  <span>신속항원검사</span>
+                </a>
+              </li>
+              <li class="card-covid__item">
+                <a href="">
+                  <span>잔여백신예약</span>
+                </a>
+              </li>
+              <li class="card-covid__item">
+                <a href="">
+                  <span>팩트체크</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="card card-app">
+            <a>
+              <p>
+                더 편리해진 AI 검색 기능<br />
+                <strong>네이버앱</strong>에서 만나보세요
+              </p>
+              <span>앱 사용하기</span>
+            </a>
+          </div>
+          <div class="card card-promotion">
+            <ul>
+              <li class="card-promotion__item">
+                <strong>패션뷰티판</strong>
+                <p>에스티 로더로 전하는 감사의 마음</p>
+              </li>
+              <li class="card-promotion__item">
+                <strong>알이 꽉찬 제철꽃게</strong>
+                <p>맛있는 상품과 레시피 보고가세요</p>
+              </li>
+              <li class="card-promotion__item">
+                <strong>알짜정보는 경제판</strong>
+                <p>노후 대비하려면 이건 알아 둬야죠, 2022년 개정된 기초연금제도 알아보기</p>
+              </li>
+              <li class="card-promotion__item">
+                <strong>띵동! 웹툰 배달왔어요</strong>
+                <p>오늘의 업데이트 작품 보러가기</p>
+              </li>
+            </ul>
+          </div>
+          <div class="card card-stock">
+            <ul>
+              <li>
+                <strong class="card-stock__title">나스닥 100 선물</strong>
+                <em>13,115,25</em>
+                <div class="gap">
+                  <span class="icon_up">상승</span>
+                  <span class="price">27.75</span>
+                  <span class="rate">+0.22%</span>
+                </div>
+              </li>
+            </ul>
+            <div class="card__shortcut">
+              <a href="/" class="shortcut__item">국내 증시</a>
+              <a href="/" class="shortcut__item">해외 증시</a>
+              <a href="/" class="shortcut__item">경제 지표</a>
+            </div>
+          </div>
+          <div class="card card-banner">
+            <div class="card-banner__image"></div>
+            <div class="card-banner__info">
+              <div class="card-banner__profile">
+                <img src="" alt="" />
+              </div>
+              <h3 class="card-banner__title">네이버 선물대첩</h3>
+              <p class="card-banner__sub">가정의 달 선물하면 최대 13% 적립</p>
+            </div>
+          </div>
         </div>
 
         <div class="more-event">
-          <button class="more-event__button"></button>
+          <button class="more-event__button">이벤트 모아보기</button>
         </div>
       </div>
     </main>
