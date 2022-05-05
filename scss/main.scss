@@ -93,9 +93,11 @@ img {
 
 .content {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: 120px;
+  padding-bottom: 200px;
 }
 
 /* search */
@@ -200,10 +202,38 @@ img {
 
 .l-grid {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 33.3%);
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: 68px 108px 52px 20px 35px 192px 235px 12px 144px;
+  grid-template-areas:
+    "g1 g5 g7"
+    "g1 g5 g8"
+    "g2 g5 g8"
+    "g2 g5 g9"
+    "g3 g5 g9"
+    "g3 g6 g9"
+    "g4 g6 g9"
+    "g4 g6 ."
+    ". g6 .";
   max-width: 1104px;
+  gap: 1% 2%;
   margin: 0 auto;
+
+  .card {
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        grid-area: g#{$i};
+      }
+    }
+    .card__inner {
+      padding: 8px 12px;
+    }
+  }
+}
+
+.card-now {
+}
+.card-app {
 }
 
 .card {
@@ -211,7 +241,7 @@ img {
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
-  margin: 12px;
+  height: min-content;
 }
 
 .card-weather {
@@ -612,5 +642,36 @@ img {
     font-weight: 400;
     letter-spacing: -0.5px;
     color: #767678;
+  }
+}
+
+.more-event {
+  margin: 22px 0 24px;
+  .more-event__button {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+    background-color: #fdfdfd;
+    border-radius: 27px;
+    display: flex;
+    align-items: center;
+    padding-right: 26px;
+    font-size: 15px;
+    line-height: 53px;
+    letter-spacing: -0.5px;
+    color: #767678;
+
+    &::before {
+      display: block;
+      content: "";
+      width: 56px;
+      height: 53px;
+      margin: 0 12px 0 24px;
+      @include searchBg(0 0);
+    }
+    &::after {
+      width: 7px;
+      height: 7px;
+      margin-left: 3px;
+      @include arrow(#c3c5cb);
+    }
   }
 }
