@@ -18,7 +18,7 @@ img {
   width: 100%;
 }
 
-@mixin arrow($color: #000) {
+@mixin arrowIcon($color: #000) {
   content: "";
   display: inline-block;
   border: solid $color;
@@ -49,6 +49,12 @@ img {
     repeat: no-repeat;
     position: $position;
   }
+}
+
+@mixin textEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* header */
@@ -227,17 +233,11 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
   }
 }
 
-.card-now {
-}
-.card-app {
-}
-
 .card {
   padding: 0 16px;
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
-  height: min-content;
 }
 
 .card-weather {
@@ -255,6 +255,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
       margin-left: 12px;
       padding: 22px 0 16px;
       flex-grow: 1;
+      min-width: 0;
       .title {
         font-size: 16px;
         line-height: 24px;
@@ -263,6 +264,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
         font-size: 14px;
         line-height: 20px;
         letter-spacing: -0.5px;
+        @include textEllipsis;
         .state-good {
           color: #00a8ff;
         }
@@ -274,11 +276,11 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
     .card-weather__my-location {
       display: flex;
       align-items: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
       font-size: 14px;
       line-height: 22px;
       color: #767678;
+      min-width: 0;
+
       &::after {
         content: "";
         display: inline-block;
@@ -286,7 +288,12 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
         height: 16px;
         margin-left: 6px;
         vertical-align: top;
+        flex-shrink: 0;
         @include searchBg(-46px -322px);
+      }
+
+      .my-location__text {
+        @include textEllipsis;
       }
     }
   }
@@ -299,6 +306,10 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
   }
 }
 
+.card-now__wrap {
+  overflow: hidden;
+  margin-right: -15px;
+}
 .card-now {
   .card-now__top {
     display: flex;
@@ -306,8 +317,10 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
     justify-content: space-between;
     margin-top: 12px;
     .card-now__title {
-      width: 48px;
+      width: 50px;
       height: 14px;
+      margin-right: 14px;
+      flex-shrink: 0;
 
       @include searchBg(-100px -295px);
     }
@@ -317,15 +330,17 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
       align-items: center;
       padding: 5px;
       border-radius: 15px;
+      min-width: 0;
       &::after {
         width: 6px;
         height: 6px;
         margin: 2px 7px 0 2px;
-        @include arrow(#8b8b8d);
+        @include arrowIcon(#8b8b8d);
       }
       .thumb {
         width: 20px;
         height: 20px;
+        flex-shrink: 0;
         img {
           width: 100%;
         }
@@ -336,6 +351,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
         line-height: 20px;
         margin-left: 5px;
         letter-spacing: -0.5px;
+        @include textEllipsis;
       }
     }
   }
@@ -439,6 +455,11 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
         margin-bottom: 5px;
         @include searchBg();
       }
+      .card-covid__text {
+        width: 100%;
+        text-align: center;
+        @include textEllipsis;
+      }
     }
     &.status .card-covid__link::before {
       background-position: -258px -252px;
@@ -466,6 +487,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
       height: 40px;
       display: block;
       margin-right: 10px;
+      flex-shrink: 0;
       @include searchBg(-45px -207px);
     }
     .card-app__text {
@@ -494,7 +516,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
         width: 7px;
         height: 7px;
         margin-top: 4px;
-        @include arrow(#03c95b);
+        @include arrowIcon(#03c95b);
       }
     }
   }
@@ -525,31 +547,32 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
     .card-promotion__thumb {
       width: 52px;
       border-radius: 50%;
+      flex-shrink: 0;
       overflow: hidden;
+      img {
+        display: block;
+      }
     }
     .card-promotion__info {
       text-align: right;
-      padding: 0 18px;
+      margin: 0 18px;
       flex-grow: 1;
+      min-width: 100px;
       .title {
         color: #9761ed;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
         display: block;
         font-size: 16px;
         line-height: 19px;
         letter-spacing: -0.32px;
+        @include textEllipsis;
       }
       .text {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
         margin-top: 3px;
         font-size: 14px;
         line-height: 19px;
         letter-spacing: -0.47px;
         color: #767678;
+        @include textEllipsis;
       }
     }
 
@@ -557,6 +580,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
       content: "";
       width: 20px;
       height: 16px;
+      flex-shrink: 0;
       @include searchBg(-225px -230px);
     }
   }
@@ -593,23 +617,37 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
       line-height: 24px;
       letter-spacing: -0.5px;
     }
-    .gap {
-      color: #f44336;
+    .card-stock__gap {
       font-size: 12px;
       display: flex;
 
-      .icon_up {
+      .icon {
         display: block;
         width: 8px;
         height: 7px;
         margin-right: 2px;
         margin-top: 3px;
         font-size: 0;
-        @include searchBg(-165px -147px);
       }
       .gap_price {
         margin-right: 7px;
       }
+    }
+  }
+
+  .card-stock__gap--up {
+    color: #f44336;
+
+    .icon {
+      @include searchBg(-165px -147px);
+    }
+  }
+
+  .card-stock__gap--down {
+    color: #2196f3;
+
+    .icon {
+      @include searchBg(-178px -147px);
     }
   }
 }
@@ -622,12 +660,19 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
     align-items: center;
     padding: 18px 15px;
   }
+  .card-banner__info {
+    min-width: 0;
+  }
   .card-banner__thumb {
     width: 50px;
     border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: 50%;
     overflow: hidden;
     margin-right: 12px;
+    flex-shrink: 0;
+    img {
+      display: block;
+    }
   }
   .card-banner__title {
     font-size: 17px;
@@ -642,6 +687,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
     font-weight: 400;
     letter-spacing: -0.5px;
     color: #767678;
+    @include textEllipsis;
   }
 }
 
@@ -671,7 +717,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
       width: 7px;
       height: 7px;
       margin-left: 3px;
-      @include arrow(#c3c5cb);
+      @include arrowIcon(#c3c5cb);
     }
   }
 }
@@ -682,11 +728,10 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
   text-align: center;
   padding-top: 36px;
   padding-bottom: 79px;
-
   padding: 30px 0 79px;
+
   .footer__info {
     padding: 3px 9px;
-
     font-size: 13px;
     line-height: 17px;
     letter-spacing: -0.5px;
@@ -726,7 +771,7 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
   $item-orders: (1, 3, 9, 8, 6, 4, 2, 7, 5);
 
   .l-grid {
-    height: 1400px;
+    height: 1300px;
     gap: $gap;
     padding: 0 27px;
     box-sizing: border-box;
@@ -735,7 +780,6 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
     width: calc(50% - #{($gap-x * 1 / 2)});
     @for $i from 1 through 9 {
       &:nth-child(#{$i}) {
-        z-index: $gap;
         height: auto;
         order: nth($item-orders, $i);
       }
