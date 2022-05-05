@@ -8,33 +8,56 @@
     <title>NAVER</title>
   </head>
   <body>
-    <header class="header">
-      <button class="header__menu"></button>
-      <div class="header__buttons">
-        <button class="header__button header__button--pay"></button>
-        <button class="header__button header__button--notify"></button>
-        <button class="header__button header__button--profile"></button>
+    <div class="top-menu">
+      <button class="top-menu__all"></button>
+      <div class="top-menu__buttons">
+        <button class="top-menu__button top-menu__button--pay"></button>
+        <button class="top-menu__button top-menu__button--notify"></button>
+        <button class="top-menu__button top-menu__button--profile"></button>
       </div>
-    </header>
-    <div class="search-header">
+    </div>
+    <header class="header">
+      <div class="header__search">
+        <div class="header__logo search__logo"></div>
+        <form class="header__search-form">
+          <input class="header__input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <button class="search__button"></button>
+      </div>
       <nav class="nav">
-        <div class="nav__search">
-          <div class="nav__logo"></div>
-          <input class="nav__input" />
-          <button class="nav__search-button"></button>
-        </div>
-        <ul class="nev__list">
-          <li class="nev__item"></li>
+        <ul class="nav__list">
+          <li class="nav__item"><a href="">뭐하지</a></li>
+          <li class="nav__item"><a href="">책방</a></li>
+          <li class="nav__item"><a href="">원쁠딜</a></li>
+          <li class="nav__item"><a href="">리빙</a></li>
+          <li class="nav__item"><a href="">레시피</a></li>
+          <li class="nav__item"><a href="">장보기</a></li>
+          <li class="nav__item"><a href="">패션뷰티</a></li>
+          <li class="nav__item"><a href="">선물샵</a></li>
+          <li class="nav__item"><a href="">쇼핑라이브</a></li>
+          <li class="nav__item"><a href="">쇼핑</a></li>
+          <li class="nav__item selected"><a href="">홈</a></li>
+          <li class="nav__item"><a href="">뉴스</a></li>
+          <li class="nav__item"><a href="">연예</a></li>
+          <li class="nav__item"><a href="">스포츠</a></li>
+          <li class="nav__item"><a href="">쇼핑</a></li>
+          <li class="nav__item"><a href="">추천·구독</a></li>
+          <li class="nav__item"><a href="">경제</a></li>
+          <li class="nav__item"><a href="">우리동네</a></li>
+          <li class="nav__item"><a href="">웹툰</a></li>
+          <li class="nav__item"><a href="">자동차</a></li>
         </ul>
       </nav>
-    </div>
+    </header>
     <main>
       <div class="content">
         <div class="search">
           <div class="search__container">
-            <button class="search__logo"></button>
-            <input placeholder="검색어를 입력해주세요" />
-            <button class="search__button"></button>
+            <form class="search__form">
+              <a href="" class="search__logo"></a>
+              <input placeholder="검색어를 입력해주세요" />
+              <button class="search__button"></button>
+            </form>
           </div>
           <div class="search__shortcut">
             <ul class="shortcut__buttons">
@@ -381,5 +404,15 @@
         <div class="footer__logo"></div>
       </div>
     </footer>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        if (document.documentElement.scrollTop > 200) {
+          document.querySelector(".header").classList.add("show");
+        } else {
+          document.querySelector(".header").classList.remove("show");
+        }
+      });
+    </script>
   </body>
 </html>
