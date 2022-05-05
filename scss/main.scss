@@ -728,11 +728,33 @@ $item-orders: (1, 4, 7, 8, 9, 2, 5, 3, 6);
   .l-grid {
     height: 1400px;
     gap: $gap;
-    padding: 0 10px;
+    padding: 0 27px;
     box-sizing: border-box;
   }
   .l-grid .card {
     width: calc(50% - #{($gap-x * 1 / 2)});
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        z-index: $gap;
+        height: auto;
+        order: nth($item-orders, $i);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  $gap: 20px;
+  $item-orders: (1, 4, 8, 7, 2, 6, 3, 5, 9);
+
+  .l-grid {
+    height: auto;
+    gap: $gap;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  .l-grid .card {
+    width: 100%;
     @for $i from 1 through 9 {
       &:nth-child(#{$i}) {
         z-index: $gap;
