@@ -539,23 +539,23 @@
 
 .card-promotion {
   padding: 0 20px; }
-  .card-promotion .card-promotion__item {
+  .card-promotion .card-promotion__item a {
     display: flex;
     align-items: center;
     padding: 18px 0; }
-    .card-promotion .card-promotion__item .card-promotion__thumb {
+    .card-promotion .card-promotion__item a .card-promotion__thumb {
       width: 52px;
       border-radius: 50%;
       flex-shrink: 0;
       overflow: hidden; }
-      .card-promotion .card-promotion__item .card-promotion__thumb img {
+      .card-promotion .card-promotion__item a .card-promotion__thumb img {
         display: block; }
-    .card-promotion .card-promotion__item .card-promotion__info {
+    .card-promotion .card-promotion__item a .card-promotion__info {
       text-align: right;
       margin: 0 18px;
       flex-grow: 1;
       min-width: 100px; }
-      .card-promotion .card-promotion__item .card-promotion__info .card-promotion__title {
+      .card-promotion .card-promotion__item a .card-promotion__info .card-promotion__title {
         color: #9761ed;
         display: block;
         font-size: 16px;
@@ -564,7 +564,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
-      .card-promotion .card-promotion__item .card-promotion__info .card-promotion__text {
+      .card-promotion .card-promotion__item a .card-promotion__info .card-promotion__text {
         margin-top: 3px;
         font-size: 14px;
         line-height: 19px;
@@ -573,7 +573,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
-    .card-promotion .card-promotion__item::before {
+    .card-promotion .card-promotion__item a::before {
       content: "";
       width: 20px;
       height: 16px;
@@ -585,11 +585,11 @@
   .card-promotion .card-promotion__item + .card-promotion__item {
     border-top: 1px solid #eaeef3; }
 
-.align-right .card-promotion__item {
+.align-right .card-promotion__item a {
   flex-direction: row-reverse; }
-  .align-right .card-promotion__item .card-promotion__info {
+  .align-right .card-promotion__item a .card-promotion__info {
     text-align: left; }
-    .align-right .card-promotion__item .card-promotion__info .card-promotion__title {
+    .align-right .card-promotion__item a .card-promotion__info .card-promotion__title {
       color: #0ac666; }
 
 .align-right .card-promotion__item {
