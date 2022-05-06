@@ -1,12 +1,6 @@
 // Config
-@import "./reset.css";
 
-@import "variable";
-@import "header";
-@import "search";
-@import "footer";
-@import "content";
-@import "media";
+@import "header", "variable", "search", "footer", "content", "media", "categorylist", "card";
 
 body {
   color: #303038;
