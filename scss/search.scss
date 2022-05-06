@@ -1,0 +1,93 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .search__container {
+    max-width: 527px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .search__form {
+    display: flex;
+    align-items: center;
+    max-width: 488px;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid $m-green;
+    background: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px 0 rgba(117, 145, 181, 0.12);
+
+    .search__logo {
+      margin-left: 15px;
+      flex-shrink: 0;
+    }
+
+    .search__button {
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    input {
+      padding-left: 10px;
+      line-height: 3rem;
+      font-size: 1rem;
+      flex-grow: 1;
+      min-width: 0;
+    }
+    input::placeholder {
+      color: #bbbcc1;
+    }
+  }
+
+  .search__shortcut {
+    width: 340px;
+    margin: 0px auto;
+    padding: 14px 0px 46px;
+
+    .shortcut__buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        width: 25%;
+        padding: 12px 23px 0 18px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+
+        .shortcut__image {
+          position: relative;
+
+          &::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: absolute;
+            top: -2px;
+            left: -3px;
+            z-index: -1;
+            @include mainSearchBg(-163px -21px);
+          }
+          img {
+            width: 100%;
+          }
+        }
+        span {
+          display: block;
+          text-align: center;
+          margin-top: 5px;
+          font-size: 11px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}

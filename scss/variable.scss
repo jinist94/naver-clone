@@ -1,0 +1,58 @@
+/* color */
+$m-green: #03c75a;
+$m-gray: #767678;
+
+@mixin arrowIcon($color: #000, $w: auto, $h: auto) {
+  content: "";
+  width: $w;
+  height: $h;
+  display: inline-block;
+  border: solid $color;
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg);
+}
+
+@mixin mainSearchBg($position) {
+  background: {
+    image: url(/images/sp_main_search.png);
+    size: 323px 234px;
+    repeat: no-repeat;
+    position: $position;
+  }
+}
+@mixin weatherBg($position) {
+  background: {
+    image: url(/images/sp_weather_animation.png);
+    size: 472px 447px;
+    repeat: no-repeat;
+    position: $position;
+  }
+}
+@mixin searchBg($position: 0) {
+  background: {
+    image: url(/images/sp_search.png);
+    size: 372px 361px;
+    repeat: no-repeat;
+    position: $position;
+  }
+}
+
+@mixin textEllipsis($line: 1) {
+  @if ($line == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+}
+
+.ad-banner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 396px;
+}

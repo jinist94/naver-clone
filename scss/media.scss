@@ -1,0 +1,47 @@
+$sm: 700px;
+$md: 1152px;
+
+@media (min-width: $sm) and (max-width: $md) {
+  $gap: 20px;
+  $item-orders: (1, 3, 9, 8, 6, 4, 2, 7, 5);
+
+  .l-grid {
+    height: 1300px;
+    gap: $gap;
+    padding: 0 27px;
+    box-sizing: border-box;
+
+    .card {
+      width: calc(50% - #{($gap-x * 1 / 2)});
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          height: auto;
+          order: nth($item-orders, $i);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  $gap: 20px;
+  $item-orders: (1, 4, 8, 7, 2, 6, 3, 5, 9);
+
+  .l-grid {
+    height: auto;
+    gap: $gap;
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    .card {
+      width: 100%;
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          z-index: $gap;
+          height: auto;
+          order: nth($item-orders, $i);
+        }
+      }
+    }
+  }
+}

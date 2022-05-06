@@ -1,0 +1,41 @@
+@import "card.scss";
+
+/* content */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+}
+
+.more-event {
+  margin: 22px 0 24px;
+
+  .more-event__button {
+    display: flex;
+    align-items: center;
+    padding-right: 26px;
+    color: $m-gray;
+    font-size: 15px;
+    line-height: 53px;
+    letter-spacing: -0.5px;
+    border-radius: 27px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 53px;
+      margin: 0 12px 0 24px;
+      @include searchBg(0 0);
+    }
+    &::after {
+      margin-left: 3px;
+      @include arrowIcon(#c3c5cb, 7px, 7px);
+    }
+  }
+}
